@@ -3,7 +3,13 @@ const db = require("../models");
 
 router
     .route("/")
-    .post(db.Data.create(req.body))
+    .post(
+        fetch('https://covid19api.herokuapp.com/')
+            .then(res => { return res.json })
+            .then(data => {
+                db.Data.create(data)
+            })
+    )
     .get(db.Data.findById(req.params.id)
         .then(data => {
             res.json(data)
