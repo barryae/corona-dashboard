@@ -3,7 +3,7 @@ import { ResponsiveCalendar, ResponsiveRadar, ResponsiveBar, ResponsiveLine } fr
 
 
 export default function Card(props: { order: number; classes: string; type: string; data: any[]; title: string }) {
-    function createCard(type: string, data: any[]) {
+    function createCard(type: string, data: any) {
 
         switch (type) {
             case 'Text':

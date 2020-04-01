@@ -9,25 +9,6 @@ export default function Main() {
     let [card, setCard] = useState(0)
     let createdCards: any[];
 
-    const [error, setError] = useState();
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        fetch('https://covid19api.herokuapp.com/')
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setIsLoaded(true);
-                    setData(result);
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-    }, [])
-
     function showModal() {
         setShow(show = true)
     }
@@ -53,24 +34,17 @@ export default function Main() {
         return createdCards;
     }
 
-    if (error) {
-        return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-        return <div>Loading...</div>;
-    } else {
-        console.log(data);
-        return (
-            <div className="main">
-                <div className="main-header">
-                    <h1>Dashboard</h1>
-                </div>
-                <div className="card-layout">
-                    {renderCards(graphObjects)}
-                </div>
-                <Modal show={show} handleClose={hideModal} card={card} />
-            </div >
-        )
-    }
+    return (
+        <div className="main">
+            <div className="main-header">
+                <h1>COVID-19 Dashboard</h1>
+            </div>
+            <div className="card-layout">
+                {renderCards(graphObjects)}
+            </div>
+            <Modal show={show} handleClose={hideModal} card={card} />
+        </div >
+    )
 
 }
 
