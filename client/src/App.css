@@ -1,0 +1,160 @@
+body{
+background-color: #282c34;
+}
+
+.App {
+  text-align: center;
+  padding-top: 1vh;
+}
+
+.main {
+  padding: 1vh;
+  margin:auto;
+  width: 90vw;
+  border-radius: 5px;
+  background-color: cadetblue;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  padding: .5rem;
+  position:fixed;
+  background: white;
+  width: 95%;
+  height: 75%;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.modal-button{
+  display: block;
+  float: right;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.main-header{
+  text-align: left;
+  padding: 1vh 1vh 1vh 3vh;
+  border-radius: 5px 5px 0 0;
+  color: white;
+  background-color: rgba(240, 248, 255, 0.295);
+}
+
+.card{
+  padding: 1vh;
+  width: 80vw;
+}
+
+.calendar{
+margin: auto;
+  height: 30vh;
+}
+
+.radar{
+  margin: auto;
+  height: 30vh;
+}
+
+.bar-graph{
+margin: auto;
+  height: 30vh;
+}
+
+.line-graph{
+margin: auto;
+  height: 40vh;
+}
+
+.text{
+  margin: auto;
+  height: 40vh;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 1em;
+}
+
+.card-title{
+  padding: 0vh 1vh 0vh 3vh;
+  display: block;
+  text-align: left;
+  color: cadetblue;
+}
+
+.card-layout{
+  background-color: rgb(255, 255, 255);
+  border-radius: 0 0 5px 5px;
+  margin: auto;
+  display: grid;
+   grid-template-areas: 
+    "card-1"
+    "card-2"
+    "card-3"
+    "card-4"
+    "card-5"
+    ;
+}
+
+.card-1{
+  grid-area: card-1;
+}
+
+.card-2{
+  
+  grid-area: card-2;
+}
+
+.card-3{
+  
+  grid-area: card-3;
+}
+
+.card-4{
+  
+  grid-area: card-4;
+}
+
+.card-5{
+  
+  grid-area: card-5;
+}
+
+.clicked{
+  width: 90vw;
+  height: 60vh;
+}
+
+@media (min-width: 800px){
+
+.card{
+  padding: 1vh;
+  width: 40vw;
+}
+
+.clicked{
+  width: 90vw;
+}
+
+  .card-layout{
+    margin: auto;
+    grid-template-areas: 
+  "card-1 card-2"
+  "card-3 card-4"
+  "card-5 .";
+  }
+
+}
