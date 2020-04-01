@@ -12,4 +12,9 @@ router
             res.json({ message: err });
         }))
 
+router
+    .route("/barGraph")
+    .post()
+    .get()
+
 module.exports = router;
