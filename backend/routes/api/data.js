@@ -12,7 +12,8 @@ router
             .catch(err => { console.log(err) })
     })
 router
-    .route("/")
+    .route("/getData")
+    .get(() => { })
 router
     .route("/barGraph")
     .post()
