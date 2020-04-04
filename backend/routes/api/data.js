@@ -12,8 +12,16 @@ router
             .catch(err => { console.log(err) })
     })
 router
-    .route("/getData")
-    .get(() => { })
+    .route("/getLatest")
+    .get((req, res) => {
+        db.Data.find({ latest })
+            .then(results => {
+                res.json(results)
+            })
+            .catch(err => {
+                res.json({ message: err })
+            })
+    })
 router
     .route("/barGraph")
     .post()
