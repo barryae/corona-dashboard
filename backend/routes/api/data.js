@@ -18,8 +18,8 @@ router
             .then(results => {
                 res.json(results)
             })
-            .catch(err => {
-                res.json({ message: err })
+            .catch(er => {
+                res.json({ message: er })
             })
     })
 router
